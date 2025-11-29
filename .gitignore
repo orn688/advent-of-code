@@ -1,0 +1,4 @@
+.DS_Store
+
+# direnv file containing local environment variables (including secrets)
+.envrc

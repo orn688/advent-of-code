@@ -10,7 +10,7 @@ import (
 )
 
 var days = map[int][2]func(string) (string, error){
-	1: {day01.Part1},
+	1: {day01.Part1, day01.Part2},
 }
 
 func main() {

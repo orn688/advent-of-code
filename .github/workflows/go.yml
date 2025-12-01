@@ -29,3 +29,7 @@ jobs:
 
     - name: test
       run: go test -v ./...
+
+    - name: format
+      run: if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then exit 1; fi
+      

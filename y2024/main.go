@@ -7,10 +7,12 @@ import (
 
 	"github.com/orn688/advent-of-code/util"
 	"github.com/orn688/advent-of-code/y2024/day01"
+	"github.com/orn688/advent-of-code/y2024/day02"
 )
 
 var days = map[int][2]func(string) (string, error){
 	1: {day01.Part1, day01.Part2},
+	2: {day02.Part1},
 }
 
 func main() {

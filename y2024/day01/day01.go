@@ -1,14 +1,14 @@
 package day01
 
 import (
-	"fmt"
 	"slices"
 	"strconv"
-	"strings"
+
+	"github.com/orn688/advent-of-code/util"
 )
 
 func Part1(input string) (string, error) {
-	rows, err := parseInput(input)
+	rows, err := util.ParseGridOfIntegers(input, 2)
 	if err != nil {
 		return "", err
 	}
@@ -35,7 +35,7 @@ func Part1(input string) (string, error) {
 }
 
 func Part2(input string) (string, error) {
-	rows, err := parseInput(input)
+	rows, err := util.ParseGridOfIntegers(input, 2)
 	if err != nil {
 		return "", err
 	}
@@ -57,19 +57,4 @@ func Part2(input string) (string, error) {
 	}
 
 	return strconv.Itoa(total), nil
-}
-
-func parseInput(input string) ([][2]int, error) {
-	var parsed [][2]int
-	for _, line := range strings.Split(input, "\n") {
-		aString, bString, ok := strings.Cut(line, "   ")
-		a, aErr := strconv.Atoi(aString)
-		b, bErr := strconv.Atoi(bString)
-		if !ok || aErr != nil || bErr != nil {
-			return nil, fmt.Errorf("malformed line: %q", line)
-		}
-
-		parsed = append(parsed, [2]int{a, b})
-	}
-	return parsed, nil
 }

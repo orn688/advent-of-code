@@ -34,20 +34,22 @@ func Part2(input string) (string, error) {
 
 	curr := 50
 	for line := range strings.SplitSeq(input, "\n") {
-		dir := line[0]
+		var increment
+		switch line[0] {
+		case 'L':
+			increment = -1
+		case 'R':
+			increment = 1
+		default:
+			return "", fmt.Errorf("invalid line: %q", line)
+		}
 		count := util.MustParseInt(line[1:])
-		for count > 0 {
-			switch dir {
-			case 'L':
-				curr--
-			case 'R':
-				curr++
-			}
+		for range count {
+			curr += increment
 			curr = modulo(curr, 100)
 			if curr == 0 {
 				zeroCount++
 			}
-			count--
 		}
 	}
 

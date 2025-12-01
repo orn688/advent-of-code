@@ -1,6 +1,7 @@
 package day01
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -34,7 +35,7 @@ func Part2(input string) (string, error) {
 
 	curr := 50
 	for line := range strings.SplitSeq(input, "\n") {
-		var increment
+		var increment int
 		switch line[0] {
 		case 'L':
 			increment = -1

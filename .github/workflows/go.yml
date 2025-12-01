@@ -38,12 +38,12 @@ jobs:
         go-version: '1.25'
 
     - name: go vet
-      run: go build -v ./...
+      run: go vet ./...
 
     - name: Install gofumpt
       run: go install mvdan.cc/gofumpt@latest
 
-    - name: Run gofumpt
+    - name: gofumpt
       run: |
         # -l: list unformatted files
         # -d: show formatting diffs

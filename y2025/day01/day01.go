@@ -1,6 +1,7 @@
 package day01
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 

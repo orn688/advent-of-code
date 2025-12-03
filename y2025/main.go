@@ -4,15 +4,18 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/orn688/advent-of-code/util"
 	"github.com/orn688/advent-of-code/y2025/day01"
 	"github.com/orn688/advent-of-code/y2025/day02"
+	"github.com/orn688/advent-of-code/y2025/day03"
 )
 
 var days = map[int][2]func(string) (string, error){
 	1: {day01.Part1, day01.Part2},
 	2: {day02.Part1, day02.Part2},
+	3: {day03.Part1, day03.Part2},
 }
 
 func main() {
@@ -43,11 +46,15 @@ func mainImpl(ctx context.Context) error {
 		return err
 	}
 
+	startTime := time.Now()
 	output, err := soln(input)
 	if err != nil {
 		return err
 	}
 
+	duration := time.Since(startTime)
+
 	_, err = fmt.Println(output)
+	fmt.Printf("-- completed in %s\n", duration)
 	return err
 }

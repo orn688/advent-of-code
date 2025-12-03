@@ -5,15 +5,18 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
+	"github.com/orn688/advent-of-code/2025/day01"
+	"github.com/orn688/advent-of-code/2025/day02"
+	"github.com/orn688/advent-of-code/2025/day03"
 	"github.com/orn688/advent-of-code/util"
-	"github.com/orn688/advent-of-code/y2024/day01"
-	"github.com/orn688/advent-of-code/y2024/day02"
 )
 
 var days = map[int][2]func(string) (string, error){
 	1: {day01.Part1, day01.Part2},
-	2: {day02.Part1},
+	2: {day02.Part1, day02.Part2},
+	3: {day03.Part1, day03.Part2},
 }
 
 func main() {
@@ -39,16 +42,20 @@ func mainImpl(ctx context.Context) error {
 		return fmt.Errorf("no solution for day %d part %d", flags.Day, flags.Part)
 	}
 
-	input, err := util.FetchInput(ctx, 2024, flags.Day)
+	input, err := util.FetchInput(ctx, 2025, flags.Day)
 	if err != nil {
 		return err
 	}
 
+	startTime := time.Now()
 	output, err := soln(strings.TrimRight(input, "\n"))
 	if err != nil {
 		return err
 	}
 
+	duration := time.Since(startTime)
+
 	_, err = fmt.Println(output)
+	fmt.Printf("-- completed in %s\n", duration)
 	return err
 }

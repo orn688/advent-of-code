@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/orn688/advent-of-code/util"
 	"github.com/orn688/advent-of-code/y2024/day01"
@@ -43,7 +44,7 @@ func mainImpl(ctx context.Context) error {
 		return err
 	}
 
-	output, err := soln(input)
+	output, err := soln(strings.TrimRight(input, "\n"))
 	if err != nil {
 		return err
 	}

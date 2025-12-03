@@ -2,3 +2,6 @@
 
 # direnv file containing local environment variables (including secrets)
 .envrc
+
+# Problem inputs cache directory
+/.cache/

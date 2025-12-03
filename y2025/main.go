@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/orn688/advent-of-code/util"
@@ -47,7 +48,7 @@ func mainImpl(ctx context.Context) error {
 	}
 
 	startTime := time.Now()
-	output, err := soln(input)
+	output, err := soln(strings.TrimRight(input, "\n"))
 	if err != nil {
 		return err
 	}

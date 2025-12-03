@@ -25,7 +25,7 @@ jobs:
       run: go build -v ./...
 
     - name: Test
-      run: go test -v ./...
+      run: go test -v -timeout 1m ./...
 
   lint:
     runs-on: ubuntu-latest
@@ -49,4 +49,3 @@ jobs:
         # -d: show formatting diffs
         # -e: produce non-zero exit code if there are any formatting errors
         gofumpt -l -d -e .
-      

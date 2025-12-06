@@ -16,6 +16,7 @@ import (
 	"github.com/orn688/advent-of-code/2025/day03"
 	"github.com/orn688/advent-of-code/2025/day04"
 	"github.com/orn688/advent-of-code/2025/day05"
+	"github.com/orn688/advent-of-code/2025/day06"
 	"github.com/orn688/advent-of-code/util"
 )
 
@@ -27,6 +28,7 @@ var days = map[int][2]func(string) (string, error){
 	3: {day03.Part1, day03.Part2},
 	4: {day04.Part1, day04.Part2},
 	5: {day05.Part1, day05.Part2},
+	6: {day06.Part1, day06.Part2},
 }
 
 func init() {

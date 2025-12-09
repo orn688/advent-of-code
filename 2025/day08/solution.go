@@ -104,9 +104,7 @@ func distance(pt1, pt2 point) float64 {
 		diff := pt1[i] - pt2[i]
 		sum += math.Pow(float64(diff), 2)
 	}
-	// Don't bother sqrting since we only care about relative distances, not
-	// absolute.
-	return sum
+	return math.Sqrt(sum)
 }
 
 func parseInput(input string) []point {

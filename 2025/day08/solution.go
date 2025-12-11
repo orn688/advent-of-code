@@ -58,7 +58,7 @@ func solutionImpl(input string, pairsToJoin int) (string, error) {
 		pairsToJoin = len(pairs)
 	}
 	for _, pair := range pairs[:pairsToJoin] {
-		// For simplicity, always merge into the circuit with the higher ID (the
+		// For simplicity, always merge the circuit with the higher ID (the
 		// child) into the circuit with the lower ID (the parent).
 		parentID := circuitIDs[pair.i]
 		childID := circuitIDs[pair.j]
